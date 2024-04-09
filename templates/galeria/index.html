@@ -18,99 +18,27 @@
                     </ul>
                 </section>
                 <section class="galeria">
+                  
                     <div class="cards">
                         <h2 class="cards__titulo">Navegue pela galeria</h2>
                         <ul class="cards__lista">
+                            {% for foto_id, info in cards.items %}  
                             <li class="card">
                                 <a href="{% url 'imagem' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/rise.png' %}" alt="foto">
                                 </a>
                                 <span class="card__tag">Ver Mais</span>
                                 <div class="card__info">
-                                    <p class="card__titulo">Monster Hunter</p>
+                                    <p class="card__titulo">{{ info.nome }}</p>
                                     <div class="card__texto">
-                                        <p class="card__descricao">A franquia Monster Hunter é uma série de jogos de fantasia desenvolvida e publicada pela Capcom.</p>
+                                        <p class="card__descricao">{{ info.plataforma }}</p>
                                         <span>
                                             <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
                                         </span>
-                                    </div>
+                                    </div>                             
                                 </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/satisfactory.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">Satisfactory</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">Satisfactory é um jogo eletrônico de simulação de fábrica pela desenvolvedora Sueca de videogame Coffee Stain Studios.</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/f12021.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">F1 2021</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">F1 2021 é o videogame oficial dos campeonatos de Fórmula 1 e Fórmula 2 de 2021, desenvolvido pela Codemasters e publicado pela EA Sports.</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/oneshot.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">OneShot</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">OneShot é um jogo de aventura com elementos de puzzle desenvolvido pelo estúdio independente Future Cat.</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/eurotruck.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">Euro Truck Simulator 2</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">Euro Truck Simulator 2 é um jogo de simulação de caminhões desenvolvido, e publicado pela SCS Software</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/outerwilds.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">Outer Wilds</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">Outer Wilds é um jogo eletrônico independente de ação-aventura e exploração em mundo aberto.</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
+                           </li>
+                           {% endfor %}
                         </ul>
                     </div>
                 </section>
