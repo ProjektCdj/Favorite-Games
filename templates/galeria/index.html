@@ -1,116 +1,21 @@
 {% extends 'galeria/base.html' %}
 {% load static %}
 {% block content %}
-
-    
-            <section class="conteudo">
-                <section class="banner">
-                    <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner Alura Space">
-                    <h1 class="banner__titulo"> OS JOGOS MAIS FODAS!!</h1>
-                </section>
-                <section class="tags">
-                    <p class="tags__titulo">Busque por tags:</p>
-                    <ul class="tags__lista">
-                        <li class="tags__tag">Nebulosa</li>
-                        <li class="tags__tag">Estrela</li>
-                        <li class="tags__tag">Galáxia</li>
-                        <li class="tags__tag">Planeta</li>
-                    </ul>
-                </section>
-                <section class="galeria">
+    {% include 'partials/_banner.html' %}
+                {% include 'partials/_tags.html' %} 
+                <section class="galeria">   
                     <div class="cards">
-                        <h2 class="cards__titulo">Navegue pela galeria</h2>
+                        <h2 class="cards__titulo">Catalogo</h2>
                         <ul class="cards__lista">
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/rise.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">Monster Hunter</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">A franquia Monster Hunter é uma série de jogos de fantasia desenvolvida e publicada pela Capcom.</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/satisfactory.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">Satisfactory</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">Satisfactory é um jogo eletrônico de simulação de fábrica pela desenvolvedora Sueca de videogame Coffee Stain Studios.</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/f12021.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">F1 2021</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">F1 2021 é o videogame oficial dos campeonatos de Fórmula 1 e Fórmula 2 de 2021, desenvolvido pela Codemasters e publicado pela EA Sports.</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/oneshot.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">OneShot</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">OneShot é um jogo de aventura com elementos de puzzle desenvolvido pelo estúdio independente Future Cat.</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/eurotruck.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">Euro Truck Simulator 2</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">Euro Truck Simulator 2 é um jogo de simulação de caminhões desenvolvido, e publicado pela SCS Software</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'imagem' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/outerwilds.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Ver Mais</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">Outer Wilds</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">Outer Wilds é um jogo eletrônico independente de ação-aventura e exploração em mundo aberto.</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
+                            {% if cards %}
+                            {% for fotosthumb in cards %}
+                                {% include 'partials/_thumb.html' %}
+                            {% endfor %}
+                            {% else %}
+                            <div>
+                                <p>Jogos não encontrados</p>
+                            </div>
+                            {% endif %}
                         </ul>
                     </div>
                 </section>

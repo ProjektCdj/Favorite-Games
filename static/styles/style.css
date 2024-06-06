@@ -118,7 +118,7 @@ table {
 }
 
 .cards {
-    width: 100%;
+    width: auto;
 }
 
 .cards__titulo {
@@ -139,13 +139,13 @@ table {
     border-radius: 10px;
     box-shadow: 0px 10px 10px #00000050;
     color: #FFFFFF;
-    margin-bottom: 1.5rem;
+    margin-bottom: 25px;
     position: relative;
     width: 450px;
 }
 
 .card__imagem {
-    width: 50px;
+    width: 450px;
     border-radius: 10px 10px 0 0;
 }
 
@@ -165,7 +165,7 @@ table {
 
 .card__info {
     font-size: 1.2rem;
-    padding: 0 1.5rem 1rem 2rem;
+    padding: auto;
 }
 
 .card__titulo {
@@ -382,3 +382,5 @@ table {
     border: 2px solid #7B78E5;
     cursor: pointer;
 }
+
+

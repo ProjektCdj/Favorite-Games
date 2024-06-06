@@ -28,12 +28,15 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
     display: block;
+    
+      
+
 }
 body {
     line-height: 1;
     font-family: 'Space Grotesk', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(#041833,#04244F,#154580);
+    background: linear-gradient(180deg,#dbddd7,#cb3f68,#57233b);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -62,15 +65,18 @@ table {
 
 .banner__imagem {
     width: 100%;
+    padding: 3%;
+    border-radius: 70px;
 }
 
 .banner__titulo {
     color: #FFFFFF;
-    font-size: 40px;
+    font-size: 50px;
+    font-family: fantasy;
     width: 350px;
     line-height: 50px;
     position: absolute;
-    top: 80px;
+    top: 170px;
     left: 80px;
 }
 
@@ -94,8 +100,8 @@ table {
 
 .busca__fundo {
     align-items: center;
-    background-color: #041A37;
-    border-radius: 8px;
+    background-color: #cddbec;
+    border-radius: 10px;
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -104,17 +110,17 @@ table {
 .busca__input {
     align-items: center;
     background-color: transparent;
-    border: none;
+    border: transparent;
     font-size: 1rem;
-    height: 24px;
-    padding: 10px;
+    height: 5px;
+    padding: 18px;
     width: 500px;
 }
 
 .busca__icone {
     cursor: pointer;
-    width: 2rem;
-    height: 2rem;
+    width: 30px;
+    height: 30px;
 }
 
 .cards {
@@ -136,8 +142,8 @@ table {
 }
 
 .card {
-    border-radius: 10px;
-    box-shadow: 0px 10px 10px #00000050;
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px #4a0d19fe;
     color: #FFFFFF;
     margin-bottom: 1.5rem;
     position: relative;
@@ -186,7 +192,7 @@ table {
 
 .card__descricao {
     font-size: 0.6em;
-    margin-top: 0.8em;
+    margin-top: auto;
 }
 
 .galeria {
@@ -210,7 +216,7 @@ table {
 
 .imagem__imagem {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 50px;
 }
 
 .imagem__info {
@@ -381,4 +387,28 @@ table {
 .tags__tag:hover {
     border: 2px solid #7B78E5;
     cursor: pointer;
+}
+
+.alert {
+    --bs-alert-bg: transparent;
+    --bs-alert-padding-x: 1rem;
+    --bs-alert-padding-y: 1rem;
+    --bs-alert-margin-bottom: 1rem;
+    --bs-alert-color: inherit;
+    --bs-alert-border-color: transparent;
+    --bs-alert-border: 1px solid var(--bs-alert-border-color);
+    --bs-alert-border-radius: 0.375rem;
+    position: relative;
+    padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x);
+    margin-bottom: var(--bs-alert-margin-bottom);
+    color: var(--bs-alert-color);
+    background-color: var(--bs-alert-bg);
+    border: var(--bs-alert-border);
+    border-radius: var(--bs-alert-border-radius);
+}
+
+.alert-primary {
+    --bs-alert-color: #084298;
+    --bs-alert-bg: #cfe2ff;
+    --bs-alert-border-color: #b6d4fe;
 }

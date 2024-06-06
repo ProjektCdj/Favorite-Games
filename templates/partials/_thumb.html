@@ -1,0 +1,21 @@
+{% load static %}
+
+<li class="card">   
+    <a href="{% url 'imagem' foto_id=fotosthumb.id %}">
+    {% if fotosthumb.foto == "" or fotosthumb.foto == null %}
+        <img class="card__imagem" src="{% static '/assets/imagens/galeria/not-found.png' %}">
+    {% else %}
+        <img class="card__imagem" src="{{ fotosthumb.foto.url }}" alt="foto">
+    {% endif %}
+    </a>
+    <span class="card__tag">Ver Mais</span>
+    <div class="card__info">
+        <p class="card__titulo">{{ fotosthumb.nome }}</p>
+        <div class="card__texto">
+            <p class="card__descricao">{{ fotosthumb.plataforma }}</p>
+            <span>
+                <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
+            </span>
+        </div>
+    </div>
+</li>
