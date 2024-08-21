@@ -1,26 +1,8 @@
-{% extends 'galeria/base.html' %}
+{% extends 'shared/base.html' %}
 {% load static %}
+
 {% block content %}
     {% include 'partials/_banner.html' %}
-                {% include 'partials/_tags.html' %} 
-                <section class="galeria">   
-                    <div class="cards">
-                        <h2 class="cards__titulo">Catalogo</h2>
-                        <ul class="cards__lista">
-                            {% if cards %}
-                            {% for fotosthumb in cards %}
-                                {% include 'partials/_thumb.html' %}
-                            {% endfor %}
-                            {% else %}
-                            <div>
-                                <p>Jogos não encontrados</p>
-                            </div>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </section>
-            </section>
-        </main>
-    </div>
-
+    {% include 'partials/_tags.html' %} 
+    {% include 'partials/_thumb.html' %}
 {% endblock %}

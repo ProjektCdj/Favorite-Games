@@ -1,24 +1,29 @@
-{% extends 'galeria/base.html' %}
+{% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-            <section class="conteudo">
-                <section class="imagem">
-                    <div class="imagem__conteudo">
-                        {% if fotocapa.foto == "" or fotocapa.foto == null%}
-                            <img class="imagem" src="{% static '/assets/imagens/galeria/not-found.png'%}">
-                        {% else %}
-                            <img class="imagem__imagem" src="{{ fotocapa.foto.url }}">
-                        {% endif %}
-                        <div class="imagem__info">
-                            <div class="imagem__texto">
-                                <p class="imagem__titulo">{{ fotocapa.nome }}</p>
-                                <p class="imagem__descricao">{{ fotocapa.plataforma }}</p>
-                                <p class="imagem__texto">{{ fotocapa.descricao }}</p>
-                            </div>
-                        </div>
+
+ <!-- Pagina ao Clicar no Card-->
+
+<section class="conteudo">
+    <section class="imagem">
+        <div class="imagem__conteudo">
+            {% if fotosthumb.foto == "" or fotosthumb.foto == null%}
+                <img class="imagem" src="{% static 'assets//imagens/galeria/not-found.png'%}">
+                    {% else %}
+                <img class="imagem__imagem" src="{{ fotosthumb.foto.url }}">
+                    {% endif %}
+                <div class="imagem__info">
+                    <div class="imagem__texto">
+                        <p class="imagem__titulo">{{ fotosthumb.nome }}</p>
+                        <p class="imagem__descricao">{{ fotosthumb.plataforma }}</p>
+                        <p class="imagem__texto">{{ fotosthumb.descricao }}</p>
                     </div>
-                </section>
-            </section>
-        </main>
-    </div>
+                    <div>
+                        <a href="{% url 'editar_imagem' fotosthumb.id %}"><button class="btn btn-success col-12" style="padding: top 5px;">Editar</button></a>
+                        <a href="{% url 'deletar_imagem' fotosthumb.id %}"><button class="btn btn-danger col-12" style="padding: top 5px;">Deletar</button></a>
+                    </div>
+                </div>
+        </div>
+    </section>
+</section>
 {% endblock %}

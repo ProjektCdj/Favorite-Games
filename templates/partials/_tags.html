@@ -1,11 +1,13 @@
 {% load static %}
 
+<!-- Tags de Filtros -->
+
 <section class="tags">
-    <p class="tags__titulo">Busque por plataformas:</p>
+    <p class="tags__titulo">Busque por categorias:</p>
     <ul class="tags__lista">
-        <li class="tags__tag">Xbox</li>
-        <li class="tags__tag">Playstation</li>
-        <li class="tags__tag">Switch</li>
-        <li class="tags__tag">PC</li>
+        <li class="tags__tag"><a href="{% url 'filtro' 'SIMULACAO' %}"  class="btn" style="color: #ffffff;">Simulação</a></li>
+        <li class="tags__tag"><a href="{% url 'filtro' 'ROUGUELIKE' %}"  class="btn" style="color: #ffffff;">Rougue Like</a></li>
+        <li class="tags__tag"><a href="{% url 'filtro' 'SOBREVIVENCIA' %}"  class="btn" style="color: #ffffff;">Sobrevivência</a></li>
+        <li class="tags__tag"><a href="{% url 'filtro' 'EXPLORACAO' %}"  class="btn" style="color: #ffffff;">Exploração</a></li>
     </ul>
 </section>  
